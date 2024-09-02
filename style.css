@@ -101,3 +101,102 @@ body{
     background-color: var(--second-color);
     color: var(--text-color);
 }
+
+/* CSS di chat GPT per la tabella */
+
+.expensesList {
+    margin-top: 2em;
+    color: var(--text-color);
+}
+
+.expensesList h2 {
+    text-align: center;
+    margin-bottom: 1em;
+    color: var(--text-color);
+    font-size: 1.5em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 1em;
+    text-align: left;
+    font-size: 1em;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+th {
+    background-color: var(--second-color);
+    color: var(--text-color);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+td {
+    background-color: var(--third-color);
+    color: var(--text-color);
+}
+
+tfoot {
+    background-color: var(--second-color);
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+tfoot td {
+    border: none;
+}
+
+tfoot #totalAmount {
+    text-align: left;
+}
+
+tbody tr:nth-child(even) td {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+tbody tr:hover td {
+    background-color: rgba(150, 150, 200, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+td:last-child {
+    text-align: center;
+}
+
+.expensesList button {
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--second-color);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.expensesList button:hover {
+    background-color: var(--border-color);
+    transform: scale(1.05);
+}
+
+.expensesList button:active {
+    transform: scale(0.98);
+}
+
+/* Media Query per dispositivi mobili */
+@media (max-width: 500px) {
+    th, td {
+        font-size: 0.9em;
+        padding: 0.5em;
+    }
+    
+    .expensesList h2 {
+        font-size: 1.2em;
+    }
+}
