@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Ecco un'idea per un mini progetto in JavaScript: un calcolatore di spesa mensile. Questo progetto ti permette di inserire e tracciare le tue spese mensili, visualizzare un riepilogo delle spese e vedere se hai superato un budget prefissato.
+
+    Caratteristiche principali:
+    Input delle spese: L'utente può inserire una descrizione della spesa, l'importo e la data.
+    Visualizzazione del riepilogo: Le spese vengono elencate in un riepilogo con la possibilità di filtrare per mese.
+    Calcolo del totale: Mostra il totale delle spese per il mese corrente.
+    Confronto con il budget: L'utente può impostare un budget mensile e il programma mostrerà se è stato superato o meno.
+    Grafico a torta: Un semplice grafico a torta (usando una libreria come Chart.js) per visualizzare la distribuzione delle spese per categoria. -->
+
+    <h1 class="title">Calcolatore di Spesa Mensile</h1>
+
+    <form class="formSpese">
+        <div class="selectGroup">
+            <select id="selectGroup" required>
+                <option disabled selected>-- Scegli una categoria --</option>
+                <option value="spesa">Spesa</option>
+                <option value="auto">Auto</option>
+                <option value="sport">Sport</option>
+                <option value="tempo libero">Tempo libero</option>
+                <option value="casa">Casa</option>
+                <option value="vacanza">Vacanza</option>
+            </select>
+        </div>
+
+        <div class="inputGroup">
+            <input type="text" id="inputText" required autocomplete="off">
+            <label for="inputText">Descrizione</label>
+        </div>
+
+        <div class="inputGroup">
+            <input type="number" id="inputPrice" required autocomplete="off">
+            <label for="inputPrice">Prezzo</label>
+        </div> 
+        
+        <div class="inputGroup">
+            <input type="date" id="inputDate" required autocomplete="off">
+        </div>
+        
+        <button id="addBtn">Aggiungi Spesa</button>
+    </form>
+
+    <div class="expensesList">
+        <h2>Lista spese</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Categoria</th>
+                    <th>Descrizione</th>
+                    <th>Prezo</th>
+                    <th>Modifica</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+
+    <!-- <ul class="listaSpese">
+        <li>Nota spese</li>
+        <li>Prezzo</li>
+        <li>Totale spese</li>
+    </ul> -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
