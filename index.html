@@ -21,7 +21,7 @@
     <form class="formSpese">
         <div class="categoryGroup">
             <select id="categoryGroup" required>
-                <option disabled selected>-- Scegli una categoria --</option>
+                <option value="" disabled selected>-- Scegli una categoria --</option>
                 <option value="spesa">Spesa</option>
                 <option value="auto">Auto</option>
                 <option value="sport">Sport</option>
@@ -32,13 +32,13 @@
         </div>
 
         <div class="inputGroup">
-            <input type="text" id="inputText" required autocomplete="off">
             <label for="inputText">Descrizione</label>
+            <input type="text" id="inputText" required autocomplete="off">
         </div>
 
         <div class="inputGroup">
-            <input type="number" id="inputPrice" required autocomplete="off">
-            <label for="inputPrice">Prezzo</label>
+            <label for="inputAmount">Prezzo</label>
+            <input type="number" id="inputAmount" required autocomplete="off">
         </div> 
         
         <div class="inputGroup">
@@ -55,7 +55,7 @@
                 <tr>
                     <th>Categoria</th>
                     <th>Descrizione</th>
-                    <th>Prezo</th>
+                    <th>Prezzo</th>
                     <th>Modifica</th>
                 </tr>
             </thead>

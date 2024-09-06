@@ -2,7 +2,7 @@ const categoryGroup = document.getElementById('categoryGroup');
 const inputText = document.getElementById('inputText');
 const inputPrice = document.getElementById('inputPrice');
 const inputDate = document.getElementById('inputDate');
-const myBtn = document.getElementById('addBtn');
+const addBtn = document.getElementById('addBtn');
 const expenseTableBody = document.getElementById('expenseTableBody');
 const totalAmount = document.getElementById('totalAmount');
 
@@ -22,7 +22,7 @@ addBtn.addEventListener('click', function(){
     // Alert per inserire tutti i campi
 
     // Alert per la categoria
-    if (category === ''){
+    if (category === '' || category === '-- Scegli una categoria --'){
         alert('Seleziona una categoria');
         return;
     }
@@ -45,7 +45,7 @@ addBtn.addEventListener('click', function(){
         return;
     }
 
-    // Aggiungo le spese alla lista
+    // Aggiungo all'array una nuova spesa
     expenses.push({category, price, description, date});
 
     // totale spese
@@ -76,7 +76,7 @@ addBtn.addEventListener('click', function(){
 
     const expense = expenses[expenses.length - 1];
     categoryCell.textContent = expense.category;
-    pricCell.textContent = expense.price;
+    priceCell.textContent = expense.price;
     dateCell.textContent = expense.date;
     deleteCell.appendChild(deleteBtn);
 
@@ -86,7 +86,7 @@ for (const expense of expenses) {
     totalAmount += expense.price;
     totalAmount.textContent = totalAmount;
 
-    const newRow = expenseTableBody.inserRow();
+    const newRow = expenseTableBody.insertRow();
     const categoryCell = newRow.insertCell();
     const priceCell = newRow.insertCell();
     const dateCell = newRow.insertCell();
@@ -103,7 +103,21 @@ for (const expense of expenses) {
         expenseTableBody.removeChild(newRow);
     });
     categoryCell.textContent = expense.category;
-    èriceCell.textContent = expense.price;
+    priceCell.textContent = expense.price;
     dateCell.textContent = expense.date;
     deleteCell.appendChild(deleteBtn);
 }
+
+addBtn();
+
+
+
+// Imposto aautomaticamente la data odierna
+
+function setTodayDate(){
+    const today = new Date();
+    const formatDate = today.toISOString.split('T')[0];
+    inputDate.value = formatDate;
+}
+
+setTodayDate();
