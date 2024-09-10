@@ -4,14 +4,6 @@
     box-sizing: border-box;
 }
 
-:root{
-    --first-color: #32E647;
-    --second-color: #513DE3;
-    --third-color: #B9C9BB;
-    --text-color: #fff;
-}
-
 body{
     font-family: 'Segoe UI', sans-serif;
-    background-color: var(--first-color);
 }

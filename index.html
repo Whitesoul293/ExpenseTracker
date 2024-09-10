@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Ecco un'idea per un mini progetto in JavaScript: un calcolatore di spesa mensile. Questo progetto ti permette di inserire e tracciare le tue spese mensili, visualizzare un riepilogo delle spese e vedere se hai superato un budget prefissato.
 
@@ -16,64 +19,64 @@
     Confronto con il budget: L'utente può impostare un budget mensile e il programma mostrerà se è stato superato o meno.
     Grafico a torta: Un semplice grafico a torta (usando una libreria come Chart.js) per visualizzare la distribuzione delle spese per categoria. -->
 
-    <h1 class="title">Calcolatore di Spesa Mensile</h1>
+    <div class="bg-slate-200 min-h-screen">
+        <h1 class="title text-3xl font-bold pt-2 text-center">Calcolatore di Spesa Mensile</h1>
 
-    <form class="formSpese">
-        <div class="categoryGroup">
-            <select id="categoryGroup" required>
-                <option value="" disabled selected>-- Scegli una categoria --</option>
-                <option value="spesa">Spesa</option>
-                <option value="auto">Auto</option>
-                <option value="sport">Sport</option>
-                <option value="tempo libero">Tempo libero</option>
-                <option value="casa">Casa</option>
-                <option value="vacanza">Vacanza</option>
-            </select>
+        <form class="formSpese rounded-xl bg-white p-5 m-5 flex justify-between items-center">
+            <div class="categoryGroup">
+                <select class="p-2 border border-black rounded" id="categoryGroup">
+                    <option value="default" disabled selected>-- Scegli una categoria --</option>
+                    <option value="spesa">Spesa</option>
+                    <option value="auto">Auto</option>
+                    <option value="sport">Sport</option>
+                    <option value="tempo libero">Tempo libero</option>
+                    <option value="casa">Casa</option>
+                    <option value="vacanza">Vacanza</option>
+                </select>
+            </div>
+
+            <input type="text" class="p-2 border border-black rounded" id="inputText" placeholder="Descrizione"
+                autocomplete="off">
+
+            <input type="number" class="p-2 border border-black rounded" id="inputAmount" placeholder="Prezzo"
+                autocomplete="off">
+
+            <input type="date" class="p-2 border border-black rounded" id="inputDate" autocomplete="off">
+
+            <button class="p-2 border border-black rounded" type="button" id="addBtn">Aggiungi Spesa</button>
+        </form>
+
+        <div class="w-full max-w-4xl p-5 bg-white rounded-lg shadow-lg" id="expensesList">
+            <h2 class="text-xl sm:text-2xl font-semibold mb-4">Lista spese</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white rounded-lg">
+                    <thead class="bg-gray-200 text-gray-700 uppercase text-sm leading-normal">
+                        <tr>
+                            <th class="py-3 px-6 text-left">Categoria</th>
+                            <th class="py-3 px-6 text-left">Descrizione</th>
+                            <th class="py-3 px-6 text-left">Prezzo</th>
+                            <th class="py-3 px-6 text-center">Modifica</th>
+                        </tr>
+                    </thead>
+                    <tbody id="expenseTableBody" class="text-gray-600 text-sm font-light">
+                        <!-- Contenuto della tabella -->
+                    </tbody>
+                    <tfoot class="bg-gray-200 text-gray-700 uppercase text-sm leading-normal">
+                        <tr>
+                            <td class="py-3 px-6 font-bold text-left">Totale:</td>
+                            <td id="totalAmountSection" class="py-3 px-6 text-left"></td>
+                            <td colspan="2"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
         </div>
 
-        <div class="inputGroup">
-            <label for="inputText">Descrizione</label>
-            <input type="text" id="inputText" required autocomplete="off">
-        </div>
-
-        <div class="inputGroup">
-            <label for="inputAmount">Prezzo</label>
-            <input type="number" id="inputAmount" required autocomplete="off">
-        </div> 
-        
-        <div class="inputGroup">
-            <input type="date" id="inputDate" required autocomplete="off">
-        </div>
-        
-        <button id="addBtn">Aggiungi Spesa</button>
-    </form>
-
-    <div class="expensesList">
-        <h2>Lista spese</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Categoria</th>
-                    <th>Descrizione</th>
-                    <th>Prezzo</th>
-                    <th>Modifica</th>
-                </tr>
-            </thead>
-            <tbody id="expenseTableBody">
-
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td>Totale:</td>
-                    <td id="totalAmount"></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tfoot>
-        </table>
     </div>
+
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
