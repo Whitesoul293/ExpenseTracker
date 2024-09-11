@@ -10,6 +10,12 @@ const expensesList = document.getElementById('expensesList');
 const expenseTableBody = document.getElementById('expenseTableBody');
 const totalAmountSection = document.getElementById('totalAmountSection');
 
+// Messaggi di errore
+const errorCategory = document.getElementById('errorCategory');
+const errorDescription = document.getElementById('errorDescription');
+const errorAmount = document.getElementById('errorAmount');
+const errorDate = document.getElementById('errorDate');
+
 addBtn.addEventListener('click', function(){
     const category = categoryGroup.value;
     const description = inputText.value;
@@ -83,35 +89,3 @@ addBtn.addEventListener('click', function(){
     delateCell.appendChild(dalateBtn);
 
 });
-
-// Vado a ciclare l'aggiunta e l'eliminazione della riga
-
-// for(const expense of expenses){
-//     totalAmount += amount;
-//     totalAmountSection.textContent=totalAmount;
-
-//     const newRow = expenseTableBody.insertRow();
-
-//     const categoryCell = newRow.insertCell();
-//     const AmountCell = newRow.insertCell();
-//     const dateCell = newRow.insertCell();
-//     const deleteCell = newRow.insertCell();
-
-//     const deleteBtn = document.createElement('button');
-
-//     deleteBtn.textContent = 'Delete';
-//     deleteBtn.classList.add('delete-btn');
-//     deleteBtn.addEventListener('click', function(){
-//         expenses.splioce(expenses.indexOf(expense),1);
-
-//         totalAmount -= expense.amount;
-//         totalAmountSection.textContent = totalAmount;
-
-//         expenseTableBody.removeChild(newRow);
-//     })
-//     const expense= expenses[expenses.length - 1];
-//     categoryCell.textContent=expense.category;
-//     AmountCell.textContent=expense.amount;
-//     dateCell.textContent=expense.date;
-//     deleteCell.appendChild(deleteBtn);
-// }

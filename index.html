@@ -33,44 +33,62 @@
                     <option value="casa">Casa</option>
                     <option value="vacanza">Vacanza</option>
                 </select>
+                <p id="errorCategory"></p>
+            </div>
+            <div>
+                <input type="text" class="p-2 border border-black rounded" id="inputText" placeholder="Descrizione"
+                    autocomplete="off">
+                <p id="errorDescription"></p>
             </div>
 
-            <input type="text" class="p-2 border border-black rounded" id="inputText" placeholder="Descrizione"
-                autocomplete="off">
+            <div>
+                <input type="number" class="p-2 border border-black rounded" id="inputAmount" placeholder="Prezzo"
+                    autocomplete="off">
+                <p id="errorAmount"></p>
+            </div>
 
-            <input type="number" class="p-2 border border-black rounded" id="inputAmount" placeholder="Prezzo"
-                autocomplete="off">
+            <div>
+                <input type="date" class="p-2 border border-black rounded" id="inputDate" autocomplete="off">
+                <p id="errorDate"></p>
+            </div>
 
-            <input type="date" class="p-2 border border-black rounded" id="inputDate" autocomplete="off">
+
+
+
+
 
             <button class="p-2 border border-black rounded" type="button" id="addBtn">Aggiungi Spesa</button>
         </form>
 
-        <div class="w-full max-w-4xl p-5 bg-white rounded-lg shadow-lg" id="expensesList">
-            <h2 class="text-xl sm:text-2xl font-semibold mb-4">Lista spese</h2>
-            <div class="overflow-x-auto">
-                <table class="min-w-full bg-white rounded-lg">
-                    <thead class="bg-gray-200 text-gray-700 uppercase text-sm leading-normal">
-                        <tr>
-                            <th class="py-3 px-6 text-left">Categoria</th>
-                            <th class="py-3 px-6 text-left">Descrizione</th>
-                            <th class="py-3 px-6 text-left">Prezzo</th>
-                            <th class="py-3 px-6 text-center">Modifica</th>
-                        </tr>
-                    </thead>
-                    <tbody id="expenseTableBody" class="text-gray-600 text-sm font-light">
-                        <!-- Contenuto della tabella -->
-                    </tbody>
-                    <tfoot class="bg-gray-200 text-gray-700 uppercase text-sm leading-normal">
-                        <tr>
-                            <td class="py-3 px-6 font-bold text-left">Totale:</td>
-                            <td id="totalAmountSection" class="py-3 px-6 text-left"></td>
-                            <td colspan="2"></td>
-                        </tr>
-                    </tfoot>
-                </table>
+        <div class="flex justify-center items-center">
+            <div class="w-full max-w-4xl p-5 bg-white rounded-lg shadow-lg" id="expensesList">
+                <h2 class="text-xl sm:text-2xl font-semibold mb-4 text-center">Lista spese</h2>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white rounded-lg">
+                        <thead class="bg-gray-200 text-gray-700 uppercase text-sm leading-normal">
+                            <tr>
+                                <th class="py-3 px-6 text-left">Categoria</th>
+                                <th class="py-3 px-6 text-left">Descrizione</th>
+                                <th class="py-3 px-6 text-left">Prezzo</th>
+                                <th class="py-3 px-6 text-center">Modifica</th>
+                            </tr>
+                        </thead>
+                        <tbody id="expenseTableBody" class="text-gray-600 text-sm font-light">
+                            <!-- Contenuto della tabella -->
+                        </tbody>
+                        <tfoot class="bg-gray-200 text-gray-700 uppercase text-sm leading-normal">
+                            <tr>
+                                <td class="py-3 px-6 font-bold text-left">Totale:</td>
+                                <td id="totalAmountSection" class="py-3 px-6 text-left"></td>
+                                <td colspan="2"></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
             </div>
+
         </div>
+
 
     </div>
 
